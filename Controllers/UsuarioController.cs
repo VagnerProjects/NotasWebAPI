@@ -35,7 +35,7 @@ namespace NotasWebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ServiceStatus(1, ex.Message));
+                return BadRequest(new ServiceStatus(1, ex.Message+" "+ex.InnerException));
             }
         }
 
