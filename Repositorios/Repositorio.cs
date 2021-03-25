@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NotasWebAPI.Contexto;
-using NotasWebAPI.RepositorioInterfaces;
+using NotasWebAPI.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace NotasWebAPI.Repositorios
 {
-    public class Repositorio<TEntity>: IRepository<TEntity> where TEntity:class
+    public class Repositorio<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected CelinaDbContext ctx;
 
         public Repositorio()
         {
             ctx = new CelinaDbContext();
-        
+
         }
 
         public void Adicionar(TEntity obj)

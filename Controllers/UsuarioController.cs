@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NotasWebAPI.AppServicesInterface;
-using NotasWebAPI.AppServicesInterfaces;
+using NotasWebAPI.AppServices.Interface;
+using NotasWebAPI.AppServices.Interfaces;
 using NotasWebAPI.Models;
+using NotasWebAPI.Services.Status;
 using NotasWebAPI.Status;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace NotasWebAPI.Controllers
             _appServerviceUsuario = appServerviceUsuario;
         }
 
-        [HttpPost("AdicionarUsuario")]
+        [HttpPost]
         public async Task<IActionResult> AdicionarUsuario(UsuarioModel usuario)
         {
             try
@@ -30,8 +31,9 @@ namespace NotasWebAPI.Controllers
                 var result = await _appServerviceUsuario.AdicionarUsuario(usuario);
 
                 if (result.Status == 1) return BadRequest(result);
-                
-                return Created("http://localhost:5002/Usuario/AdicionarUsuario",result);
+
+               
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -46,7 +48,7 @@ namespace NotasWebAPI.Controllers
             {
                 var result = await _appServerviceUsuario.ObterUsuarioPorId(Id);
 
-                if (result == null) return BadRequest(new ServiceStatus(0,
+                if (result == null) return BadRequest(new ServiceStatus(1,
                                                      "Não foi possível localizar o usuário"));
 
                 return Ok(result);
@@ -56,5 +58,40 @@ namespace NotasWebAPI.Controllers
                 return BadRequest(new ServiceStatus(1, ex.Message+" "+ex.InnerException));
             }
         }  
+
+        [HttpPut("AtualizarUsuario")]
+        public async Task<IActionResult> AtualizarUsuario(UsuarioModel usuario)
+        {
+            try
+            {
+                var result = await _appServerviceUsuario.AtualizarUsuario(usuario);
+
+                if (result.Status == 1) return BadRequest(result);
+                                                        
+                return Ok(result);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new ServiceStatus(1, ex.Message + " " + ex.InnerException));
+            }
+
+        }
+
+        [HttpDelete("DeletarUsuario")]
+        public async Task<IActionResult> DeletarUsuario(Guid Id)
+        {
+            try
+            {
+                var result = await _appServerviceUsuario.DeletarUsuario(Id);
+
+                if (result.Status == 1) return BadRequest(result);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ServiceStatus(1, ex.Message + " " + ex.InnerException));
+            }
+        }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NotasWebAPI.AppServicesInterfaces;
-using NotasWebAPI.Entitys;
+using NotasWebAPI.AppServices.Interfaces;
+using NotasWebAPI.Domain.Entitys;
 using NotasWebAPI.Models;
-using NotasWebAPI.ServicesInterfaces;
+using NotasWebAPI.Services;
+using NotasWebAPI.Services.Interfaces;
 using NotasWebAPI.Status;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace NotasWebAPI.AppServices
     {
         private readonly IServiceUsuario _serviceUsuario;
 
-        public AppServiceUsuario(IServiceUsuario serviceUsuario) : base(serviceUsuario)
+        public AppServiceUsuario(IServiceUsuario serviceUsuario): base(serviceUsuario)
         {
             _serviceUsuario = serviceUsuario;
         }
@@ -36,6 +37,24 @@ namespace NotasWebAPI.AppServices
         public async Task<UsuarioModel> ObterUsuarioPorId(Guid Id)
         {
             return await _serviceUsuario.ObterUsuarioPorId(Id);
+        }
+
+        public async Task<ServiceStatus> AtualizarUsuario(UsuarioModel usuarioModel)
+        {
+            if (usuarioModel == null)
+                throw new Exception("Preencha os dados do usuário!");
+
+
+            var result = await _serviceUsuario.AtualizarUsuario(usuarioModel);       
+
+            if (result.Status == 1) return await Task.FromResult(new ServiceStatus(1, "Não foi possível atualizar o usuário, verifique os dados preenchidos."));
+
+            return result;
+        }
+
+        public async Task<ServiceStatus> DeletarUsuario(Guid Id)
+        {
+            return await _serviceUsuario.DeletarUsuario(Id);
         }
     }
 }

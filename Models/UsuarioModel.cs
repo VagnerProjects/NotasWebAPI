@@ -1,5 +1,5 @@
 ﻿using NotasWebAPI.Base;
-using NotasWebAPI.Entitys;
+using NotasWebAPI.Domain.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;

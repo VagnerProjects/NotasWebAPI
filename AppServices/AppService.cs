@@ -1,5 +1,5 @@
-﻿using NotasWebAPI.AppServicesInterface;
-using NotasWebAPI.ServicesInterfaces;
+﻿using NotasWebAPI.AppServices.Interface;
+using NotasWebAPI.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

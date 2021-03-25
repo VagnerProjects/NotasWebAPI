@@ -1,0 +1,17 @@
+C:\Users\vagner\source\repos\NotasWebAPI\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\vagner\source\repos\NotasWebAPI\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\vagner\source\repos\NotasWebAPI\bin\Debug\netcoreapp2.1\NotasWebAPI.deps.json
+C:\Users\vagner\source\repos\NotasWebAPI\bin\Debug\netcoreapp2.1\NotasWebAPI.runtimeconfig.json
+C:\Users\vagner\source\repos\NotasWebAPI\bin\Debug\netcoreapp2.1\NotasWebAPI.runtimeconfig.dev.json
+C:\Users\vagner\source\repos\NotasWebAPI\bin\Debug\netcoreapp2.1\NotasWebAPI.dll
+C:\Users\vagner\source\repos\NotasWebAPI\bin\Debug\netcoreapp2.1\NotasWebAPI.pdb
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.csprojAssemblyReference.cache
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.AssemblyInfoInputs.cache
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.AssemblyInfo.cs
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.RazorAssemblyInfo.cache
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.RazorAssemblyInfo.cs
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.dll
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.pdb
+C:\Users\vagner\source\repos\NotasWebAPI\obj\Debug\netcoreapp2.1\NotasWebAPI.genruntimeconfig.cache

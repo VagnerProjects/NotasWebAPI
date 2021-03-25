@@ -1,12 +1,12 @@
 ﻿using NotasWebAPI.Contexto;
-using NotasWebAPI.RepositorioInterfaces;
-using NotasWebAPI.ServicesInterfaces;
+using NotasWebAPI.Repositorio.Interfaces;
+using NotasWebAPI.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NotasWebAPI.Services
+namespace NotasWebAPI.Services.Status
 {
     public class Service<TEntity>:IService<TEntity> where TEntity:class
     {

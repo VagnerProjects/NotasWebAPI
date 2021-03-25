@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NotasWebAPI.Contexto;
-using NotasWebAPI.Entitys;
-using NotasWebAPI.RepositorioInterfaces;
+using NotasWebAPI.Domain.Entitys;
+using NotasWebAPI.Repositorio.Interfaces;
 using NotasWebAPI.Status;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,6 @@ namespace NotasWebAPI.Repositorios
 {
     public class RepositorioUsuario : Repositorio<Usuario>, IRepositoryUsuario
     {
-        private CelinaDbContext ctx;
         public RepositorioUsuario()
         {
             ctx = new CelinaDbContext();
@@ -22,9 +21,20 @@ namespace NotasWebAPI.Repositorios
             Adicionar(usuario);
         }
 
-        public async Task<Usuario> ObterUsuarioPorId(Guid Id)
+        public Usuario ObterUsuarioPorId(Guid Id)
         {
-           return await Task.FromResult(ctx.Usuario.Include(x => x.Endereco).FirstOrDefault(x => x.Id == Id));
+           return ctx.Usuario.Include(x => x.Endereco).FirstOrDefault(x => x.Id == Id);
         }
+
+        public void AtualizarUsuario(Usuario usuario)
+        {
+            Atualizar(usuario);
+        }
+
+        public void DeletarUsuario(Usuario usuario)
+        {
+            Excluir(x => x.Id == usuario.Id);
+        }
+
     }
 }

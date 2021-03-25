@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NotasWebAPI.AppServices;
-using NotasWebAPI.AppServicesInterfaces;
-using NotasWebAPI.RepositorioInterfaces;
+using NotasWebAPI.AppServices.Interfaces;
+using NotasWebAPI.Repositorio.Interfaces;
 using NotasWebAPI.Repositorios;
 using NotasWebAPI.Services;
-using NotasWebAPI.ServicesInterfaces;
+using NotasWebAPI.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
